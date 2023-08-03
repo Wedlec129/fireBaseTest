@@ -14,7 +14,9 @@
 		5B015F6F2A7BE7AD00586846 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5B015F6E2A7BE7AD00586846 /* FirebaseAuth */; };
 		5B015F712A7BE7AD00586846 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5B015F702A7BE7AD00586846 /* FirebaseFirestore */; };
 		5B015F732A7BE80B00586846 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B015F722A7BE80B00586846 /* GoogleService-Info.plist */; };
-		5BE618FA2A7BF08500AB058E /* w.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE618F92A7BF08500AB058E /* w.swift */; };
+		5BDCD3872A7C42E100903882 /* DogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDCD3862A7C42E100903882 /* DogModel.swift */; };
+		5BDCD3892A7C42F800903882 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDCD3882A7C42F800903882 /* ListView.swift */; };
+		5BDCD38B2A7C431900903882 /* DogsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDCD38A2A7C431900903882 /* DogsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +26,9 @@
 		5B015F632A7BE70700586846 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B015F662A7BE70700586846 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5B015F722A7BE80B00586846 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		5BE618F92A7BF08500AB058E /* w.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = w.swift; sourceTree = "<group>"; };
+		5BDCD3862A7C42E100903882 /* DogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogModel.swift; sourceTree = "<group>"; };
+		5BDCD3882A7C42F800903882 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		5BDCD38A2A7C431900903882 /* DogsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +65,9 @@
 			children = (
 				5B015F5F2A7BE70600586846 /* fireBaseTestApp.swift */,
 				5B015F612A7BE70600586846 /* ContentView.swift */,
-				5BE618F92A7BF08500AB058E /* w.swift */,
+				5BDCD3862A7C42E100903882 /* DogModel.swift */,
+				5BDCD3882A7C42F800903882 /* ListView.swift */,
+				5BDCD38A2A7C431900903882 /* DogsManager.swift */,
 				5B015F632A7BE70700586846 /* Assets.xcassets */,
 				5B015F722A7BE80B00586846 /* GoogleService-Info.plist */,
 				5B015F652A7BE70700586846 /* Preview Content */,
@@ -126,7 +132,7 @@
 			);
 			mainGroup = 5B015F532A7BE70600586846;
 			packageReferences = (
-				5B015F6D2A7BE7AD00586846 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */,
+				5B015F6D2A7BE7AD00586846 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 5B015F5D2A7BE70600586846 /* Products */;
 			projectDirPath = "";
@@ -155,8 +161,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BE618FA2A7BF08500AB058E /* w.swift in Sources */,
+				5BDCD3872A7C42E100903882 /* DogModel.swift in Sources */,
+				5BDCD3892A7C42F800903882 /* ListView.swift in Sources */,
 				5B015F622A7BE70600586846 /* ContentView.swift in Sources */,
+				5BDCD38B2A7C431900903882 /* DogsManager.swift in Sources */,
 				5B015F602A7BE70600586846 /* fireBaseTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,7 +368,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5B015F6D2A7BE7AD00586846 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */ = {
+		5B015F6D2A7BE7AD00586846 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
@@ -373,12 +381,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		5B015F6E2A7BE7AD00586846 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B015F6D2A7BE7AD00586846 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
+			package = 5B015F6D2A7BE7AD00586846 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
 		5B015F702A7BE7AD00586846 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B015F6D2A7BE7AD00586846 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
+			package = 5B015F6D2A7BE7AD00586846 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */

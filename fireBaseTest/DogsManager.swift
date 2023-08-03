@@ -12,11 +12,6 @@ import FirebaseFirestoreTarget
 import Foundation
 
 
-struct Dog: Identifiable {
-    var id: UUID
-    var breed: String
-    
-}
 
 class DogsManager : ObservableObject{
     
