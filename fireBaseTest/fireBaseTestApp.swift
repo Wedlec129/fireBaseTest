@@ -11,6 +11,7 @@ import FirebaseFirestore
 
 @main
 struct fireBaseTestApp: App {
+    
     @StateObject var dogsManager = DogsManager()
     
     init(){

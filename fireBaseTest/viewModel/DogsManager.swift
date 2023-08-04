@@ -11,6 +11,7 @@ import FirebaseFirestore
 import FirebaseFirestoreTarget
 import Foundation
 
+//наша модель данных где мы определяем как будем парсить
 
 
 class DogsManager : ObservableObject{
@@ -59,6 +60,7 @@ class DogsManager : ObservableObject{
             }
             
         }
+        fetchDogs()
         
     }
     

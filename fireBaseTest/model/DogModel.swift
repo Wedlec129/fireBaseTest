@@ -7,6 +7,7 @@
 
 import Foundation
 
+//просто модель наших данных которую будем хранить
 
 struct Dog: Identifiable {
     var id: Int
