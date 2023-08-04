@@ -11,7 +11,7 @@ import FirebaseFirestore
 
 @main
 struct fireBaseTestApp: App {
-    //@StateObject var dogsManager = DogsManager()
+    @StateObject var dogsManager = DogsManager()
     
     init(){
         FirebaseApp.configure()
@@ -20,12 +20,12 @@ struct fireBaseTestApp: App {
     var body: some Scene {
         WindowGroup {
             
-            ContentView()
+            //ContentView()
             
-            /*
+            
             ListView()
                 .environmentObject(dogsManager)
-            */
+            
             
         }
     }

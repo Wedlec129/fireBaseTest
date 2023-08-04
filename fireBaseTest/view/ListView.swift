@@ -13,10 +13,11 @@ struct ListView: View {
     
     var body: some View {
         NavigationView{
+            
             List(dogsManager.dogs, id: \.id) { dog in
                 Text(dog.breed)
             }
-            
+           
             
             .navigationTitle("Dogs")
             .navigationBarItems(trailing:

@@ -11,6 +11,10 @@ struct newDogView: View {
     @EnvironmentObject var dogsManager: DogsManager
     @State private var newDog = ""
     
+    @Environment(\.presentationMode) var presentationMode
+
+       
+    
     var body: some View {
         VStack{
             TextField("Dog", text: $newDog)
@@ -18,13 +22,15 @@ struct newDogView: View {
             Button(action: {
                 //add
                 dogsManager.addDog(dogBread: newDog)
+                
+                presentationMode.wrappedValue.dismiss()
+
             }, label: {
                 Text("Save")
                 
             })
             
-        }
-        .padding()
+        }.padding()
     }
 }
 

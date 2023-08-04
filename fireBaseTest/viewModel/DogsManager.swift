@@ -53,7 +53,7 @@ class DogsManager : ObservableObject{
     func addDog(dogBread:String){
         let db = Firestore.firestore()
         let ref = db.collection("Dogs").document(dogBread)
-        ref.setData(["breed" : dogBread,"id" : dogs.count-1]){ error in
+        ref.setData(["breed" : dogBread,"id" : dogs.count  ]){ error in
             if let error = error{
                 print(error.localizedDescription)
             }
