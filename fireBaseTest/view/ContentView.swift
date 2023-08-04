@@ -17,7 +17,8 @@ struct ContentView: View {
    
     var body: some View {
         if userIsLogginIn {
-            Text("lol")
+            ListView()
+                .environmentObject(DogsManager())
         }
         else{
             welcomeScrean

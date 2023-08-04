@@ -9,7 +9,8 @@ import Foundation
 
 
 struct Dog: Identifiable {
-    var id: UUID
+    var id: Int
     var breed: String
+    
     
 }

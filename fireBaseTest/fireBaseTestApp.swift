@@ -11,12 +11,22 @@ import FirebaseFirestore
 
 @main
 struct fireBaseTestApp: App {
+    //@StateObject var dogsManager = DogsManager()
+    
     init(){
         FirebaseApp.configure()
     }
+    
     var body: some Scene {
         WindowGroup {
+            
             ContentView()
+            
+            /*
+            ListView()
+                .environmentObject(dogsManager)
+            */
+            
         }
     }
 }
