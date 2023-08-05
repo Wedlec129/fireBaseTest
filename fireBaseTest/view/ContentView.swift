@@ -44,10 +44,15 @@ struct ContentView: View {
             
             
             VStack(spacing: 20){
-                Text("Welcom")
+                Text("Welcom to")
                     .foregroundColor(.white)
                     .font(.system(size: 55, weight: .bold, design: .rounded))
-                    .offset(x: -100, y: -120)
+                    .offset(x: -70, y: -120)
+                Text("Dog notes")
+                    .foregroundColor(.white)
+                    .font(.system(size: 55, weight: .bold, design: .rounded))
+                    .offset(x: -70, y: -120)
+                
                 TextField("Email", text: $email)
                     .foregroundColor(.white)
                     .textFieldStyle(.plain)

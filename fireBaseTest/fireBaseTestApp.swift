@@ -12,7 +12,7 @@ import FirebaseFirestore
 @main
 struct fireBaseTestApp: App {
     
-    @StateObject var dogsManager = DogsManager()
+   // @StateObject var dogsManager = DogsManager()
     
     //инициализируем фаербейз
     init(){
@@ -23,12 +23,12 @@ struct fireBaseTestApp: App {
         WindowGroup {
             
             
-            //ContentView()
+            ContentView()
             
-            
+            /*
             ListView()
                 .environmentObject(dogsManager)
-            
+            */
             
         }
     }
