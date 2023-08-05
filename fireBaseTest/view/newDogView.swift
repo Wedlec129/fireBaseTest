@@ -11,6 +11,7 @@ struct newDogView: View {
     @EnvironmentObject var dogsManager: DogsManager
     @State private var newDog = ""
     
+    //тогглер по убранию окна вспыл
     @Environment(\.presentationMode) var presentationMode
 
        
@@ -23,6 +24,7 @@ struct newDogView: View {
                 //add
                 dogsManager.addDog(dogBread: newDog)
                 
+                //закрываем экран
                 presentationMode.wrappedValue.dismiss()
 
             }, label: {

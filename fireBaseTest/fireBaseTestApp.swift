@@ -14,12 +14,14 @@ struct fireBaseTestApp: App {
     
     @StateObject var dogsManager = DogsManager()
     
+    //инициализируем фаербейз
     init(){
         FirebaseApp.configure()
     }
     
     var body: some Scene {
         WindowGroup {
+            
             
             //ContentView()
             

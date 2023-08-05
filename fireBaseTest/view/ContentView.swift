@@ -15,12 +15,15 @@ struct ContentView: View {
     @State private var password = ""
     @State private var userIsLogginIn = false
    
+    
     var body: some View {
         if userIsLogginIn {
             ListView()
                 .environmentObject(DogsManager())
+            
         }
         else{
+            //если не вошли то показываем окно входа
             welcomeScrean
         }
         
