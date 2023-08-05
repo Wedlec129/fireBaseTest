@@ -58,5 +58,5 @@ open in xcode
 - [Wedlec129](GitHub Profile Link)
 
 ## License
-кукусики :)
+кукусики, моня только смотреть :)
 
