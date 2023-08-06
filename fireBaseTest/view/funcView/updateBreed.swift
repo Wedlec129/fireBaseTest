@@ -42,9 +42,12 @@ struct updateBreed: View {
                 
                 
                 Button(action: {
-                    dogsManager.updateDog(id: Dogid, newdogBread: newdogBread)
+                  
+                    dogsManager.updateDog(id: Dogid, newdogBread: "w")
+                   
                     //закрываем экран
                     presentationMode.wrappedValue.dismiss()
+                    
                     
                 }, label: {
                     Text("Save")
@@ -64,5 +67,6 @@ struct updateBreed: View {
 struct updateBreed_Previews: PreviewProvider {
     static var previews: some View {
         updateBreed()
+            .environmentObject(DogsManager())
     }
 }

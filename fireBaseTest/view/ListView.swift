@@ -16,7 +16,7 @@ struct ListView: View {
     
     //тоглер показ ли меню редактирования дог и храним адрес дог
     @State private var showPopUpRenameDog = false
-    @State private var RenameDogId :Int?
+    @State private var RenameDogId :Int = 0
     
    
     var body: some View {
@@ -42,6 +42,8 @@ struct ListView: View {
                             //тогг
                             showPopUpRenameDog.toggle()
                             RenameDogId = dog.id //айди
+                          //  dogsManager.updateDog(id: dog.id, newdogBread: "W")
+                            
                            
                             
                         }, label: {
@@ -83,7 +85,8 @@ struct ListView: View {
             
             //тог ренейм
             .sheet(isPresented: $showPopUpRenameDog){
-                updateBreed(Dogid: RenameDogId ?? 0) //View
+                updateBreed(Dogid: RenameDogId) //View
+                    
             }
             
             
