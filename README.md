@@ -11,8 +11,9 @@
 > потому вы можете зарегестрнироватся в этом приложении и удобно хранить все заметки в облаке.
 > 
 >Вы можете добавлять/удалять/редактировать записи
-> 
-> Видео работы:
+>
+
+# Видео работы:
 <div align="center">
       <a href="https://www.youtube.com/watch?v=StTqXEQ2l-Y">
      <img 
@@ -22,7 +23,7 @@
       </a>
     </div>
 
-<details><summary>Картинки</summary>
+<details><summary>Фотографии приложения</summary>
 
 <p align="center">
       <img src="https://github.com/Wedlec129/fireBaseTest/blob/main/image/1.png" width="726">
