@@ -15,10 +15,10 @@
 
 # Видео работы:
 <div align="center">
-      <a href="https://www.youtube.com/watch?v=StTqXEQ2l-Y">
+      <a href="https://youtu.be/tIkLx76oMmc">
      <img 
-      src="https://img.youtube.com/vi/StTqXEQ2l-Y/0.jpg" 
-      alt="Everything Is AWESOME" 
+      src="https://img.youtube.com/vi/tIkLx76oMmc/0.jpg" 
+      alt="video" 
       style="width:100%;">
       </a>
     </div>
