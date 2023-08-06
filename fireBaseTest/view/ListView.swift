@@ -23,36 +23,44 @@ struct ListView: View {
         
         NavigationView{
             //отображаем все обекты
-            List(dogsManager.dogs, id: \.id) { dog in
+            withAnimation(.spring()) {
                 
-                //наши обекты
-                Text(dog.breed)
-                    //свайп
-                    .swipeActions(edge: .trailing, allowsFullSwipe: false ) {
-                        
-                        //кнопка удалить
-                        Button(action: {
-                            dogsManager.remove(id: dog.id) //ф-я удалить
-                        }, label: {
-                            Image(systemName: "trash")
-                        }).tint(.red)
-                        
-                        //кнопка изменить
-                        Button(action: {
-                            //тогг
-                            showPopUpRenameDog.toggle()
-                            RenameDogId = dog.id //айди
-                          //  dogsManager.updateDog(id: dog.id, newdogBread: "W")
-                            
-                           
-                            
-                        }, label: {
-                            Image(systemName: "pencil")
-                        }).tint(.blue)
-                        
-                            }
+                List(dogsManager.dogs, id: \.id) { dog in
                     
-                    .padding()
+                    //наши обекты
+                    Text(dog.breed)
+                    //свайп
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false ) {
+                            
+                            //кнопка удалить
+                            Button(action: {
+                                withAnimation(.spring()) {
+                                    dogsManager.remove(id: dog.id) //ф-я удалить
+                                }
+                            }, label: {
+                                Image(systemName: "trash")
+                            }).tint(.red)
+                            
+                            
+                            //кнопка изменить
+                            Button(action: {
+                                withAnimation(.spring()) {
+                                    
+                                    //тогг
+                                    showPopUpRenameDog.toggle()
+                                    RenameDogId = dog.id //айди
+                                    //  dogsManager.updateDog(id: dog.id, newdogBread: "W")
+                                }
+                                
+                                
+                            }, label: {
+                                Image(systemName: "pencil")
+                            }).tint(.blue)
+                            
+                        }
+                    
+                        .padding()
+                }
             }
             .navigationTitle("Dogs")
             
@@ -61,8 +69,10 @@ struct ListView: View {
             //кнопка сверху +
             .navigationBarItems(trailing:
                                     Button(action: {
-                //add тогл
-                showPopUpNewDog.toggle()
+                withAnimation(.spring()) {
+                    //add тогл
+                    showPopUpNewDog.toggle()
+                }
                 
             }, label: {
                 Image(systemName: "plus")
@@ -71,7 +81,9 @@ struct ListView: View {
             //кнопка сверху reload(update)
             .navigationBarItems(trailing:
                                     Button(action: {
-                dogsManager.fetchDogs() //подгружаем данные
+                withAnimation(.spring()) {
+                    dogsManager.fetchDogs() //подгружаем данные
+                }
             }, label: {
                 Image(systemName: "arrow.triangle.2.circlepath")
                 
@@ -80,13 +92,17 @@ struct ListView: View {
             
             //если тоглер нажат отображаем другой экран нов дог
             .sheet(isPresented: $showPopUpNewDog){
-                newDogView()
+                withAnimation(.spring()) {
+                    newDogView()
+                }
             }
             
             //тог ренейм
             .sheet(isPresented: $showPopUpRenameDog){
-                updateBreed(Dogid: $RenameDogId) //View
-                    .environmentObject(dogsManager)
+                withAnimation(.spring()) {
+                    updateBreed(Dogid: $RenameDogId) //View
+                        .environmentObject(dogsManager)
+                }
                     
             }
             

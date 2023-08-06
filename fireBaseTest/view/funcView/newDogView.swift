@@ -26,8 +26,10 @@ struct newDogView: View {
             HStack(spacing: 100){
                 
                 Button(action: {
-                    //закрываем экран
-                    presentationMode.wrappedValue.dismiss()
+                    withAnimation(.spring()) {
+                        //закрываем экран
+                        presentationMode.wrappedValue.dismiss()
+                    }
                     
                 }, label: {
                     Text("Close")
@@ -37,11 +39,13 @@ struct newDogView: View {
                 
                 
                 Button(action: {
-                    //add
-                    dogsManager.addDog(dogBread: newDog)
-                    
-                    //закрываем экран
-                    presentationMode.wrappedValue.dismiss()
+                    withAnimation(.spring()) {
+                        //add
+                        dogsManager.addDog(dogBread: newDog)
+                        
+                        //закрываем экран
+                        presentationMode.wrappedValue.dismiss()
+                    }
                     
                 }, label: {
                     Text("Save")

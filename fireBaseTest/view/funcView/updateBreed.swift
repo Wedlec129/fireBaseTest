@@ -31,8 +31,10 @@ struct updateBreed: View {
             HStack(spacing: 100){
                 
                 Button(action: {
-                    //закрываем экран
-                    presentationMode.wrappedValue.dismiss()
+                    withAnimation(.spring()) {
+                        //закрываем экран
+                        presentationMode.wrappedValue.dismiss()
+                    }
                    
                     
                 }, label: {
@@ -43,12 +45,12 @@ struct updateBreed: View {
                 
                 
                 Button(action: {
-                  
-                    dogsManager.updateDog(id: Dogid, newdogBread: newdogBread)
-                   
-                    //закрываем экран
-                    presentationMode.wrappedValue.dismiss()
-                    
+                    withAnimation(.spring()) {
+                        dogsManager.updateDog(id: Dogid, newdogBread: newdogBread)
+                        
+                        //закрываем экран
+                        presentationMode.wrappedValue.dismiss()
+                    }
                     
                 }, label: {
                     Text("Save")

@@ -21,7 +21,9 @@ class DogsManager : ObservableObject{
     
     //инициализатор
     init(){
-        fetchDogs()
+        withAnimation(.spring()) {
+            fetchDogs()
+        }
     }
     
     //загружаем данные
@@ -65,7 +67,9 @@ class DogsManager : ObservableObject{
                 print(error.localizedDescription)
             }
         }
-        fetchDogs()
+        withAnimation(.spring()) {
+            fetchDogs()
+        }
         
     }
     
@@ -81,9 +85,9 @@ class DogsManager : ObservableObject{
                 print("Document successfully removed!")
             }
         }
-
-        fetchDogs()
-        
+        withAnimation(.spring()) {
+            fetchDogs()
+        }
     }
     
     func updateDog(id:Int, newdogBread:String){
@@ -97,7 +101,9 @@ class DogsManager : ObservableObject{
                 
             }
         }
-        fetchDogs()
+        withAnimation(.spring()) {
+            fetchDogs()
+        }
     }
     
 }

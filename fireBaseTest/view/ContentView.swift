@@ -18,12 +18,17 @@ struct ContentView: View {
     
     var body: some View {
         if userIsLogginIn {
-            ListView()
-                .environmentObject(DogsManager())
+            withAnimation(.spring()) {
+                ListView()
+                    .environmentObject(DogsManager())
+            }
         }
         else{
             //если не вошли то показываем окно входа
-            welcomeScrean
+            withAnimation(.spring()) {
+                welcomeScrean
+            }
+           
         }
     }
     
