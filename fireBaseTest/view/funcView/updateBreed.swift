@@ -12,7 +12,8 @@ struct updateBreed: View {
     
     @State private var newdogBread = ""
     
-    @State public var Dogid:Int = 1
+    //аля ссылка
+    @Binding public var Dogid:Int
     
     //тогглер по убранию окна вспыл
     @Environment(\.presentationMode) var presentationMode
@@ -43,7 +44,7 @@ struct updateBreed: View {
                 
                 Button(action: {
                   
-                    dogsManager.updateDog(id: Dogid, newdogBread: "w")
+                    dogsManager.updateDog(id: Dogid, newdogBread: newdogBread)
                    
                     //закрываем экран
                     presentationMode.wrappedValue.dismiss()
@@ -66,7 +67,7 @@ struct updateBreed: View {
 
 struct updateBreed_Previews: PreviewProvider {
     static var previews: some View {
-        updateBreed()
+        updateBreed(Dogid: .constant(1))
             .environmentObject(DogsManager())
     }
 }

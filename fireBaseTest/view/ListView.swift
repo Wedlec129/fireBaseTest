@@ -85,7 +85,8 @@ struct ListView: View {
             
             //тог ренейм
             .sheet(isPresented: $showPopUpRenameDog){
-                updateBreed(Dogid: RenameDogId) //View
+                updateBreed(Dogid: $RenameDogId) //View
+                    .environmentObject(dogsManager)
                     
             }
             
