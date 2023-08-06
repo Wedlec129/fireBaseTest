@@ -56,10 +56,10 @@ class DogsManager : ObservableObject{
         
     }
     
-    //удаляем
+    //добавляем
     func addDog(dogBread:String){
         let db = Firestore.firestore()
-        let ref = db.collection("Dogs").document(dogBread)
+        let ref = db.collection("Dogs").document(String((dogs.last?.id ?? 0)+1)) //название документа
         ref.setData(["breed" : dogBread,"id" : (dogs.last?.id ?? 0)+1 ]){ error in
             if let error = error{
                 print(error.localizedDescription)
@@ -69,18 +69,35 @@ class DogsManager : ObservableObject{
         
     }
     
-    //добавляем
-    func remove(dogBread:String){
+    
+    //удаляем
+    func remove(id:Int){
         let db = Firestore.firestore()
-        db.collection("Dogs").document(dogBread).delete() { err in
-              if let err = err {
+        
+        db.collection("Dogs").document(String(id)).delete() { err in
+            if let err = err {
                 print("Error removing document: \(err)")
-              } else {
+            } else {
                 print("Document successfully removed!")
-              }
             }
+        }
+
         fetchDogs()
         
+    }
+    
+    func updateDog(id:Int, newdogBread:String){
+        let db = Firestore.firestore()
+        
+        db.collection("Dogs").document(String(id)).updateData(["breed": newdogBread]) { error in
+            if let error = error {
+                print("Error updating document: \(error)")
+            } else {
+                print("Document successfully updated!")
+                
+            }
+        }
+        fetchDogs()
     }
     
 }

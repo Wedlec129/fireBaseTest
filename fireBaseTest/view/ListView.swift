@@ -17,21 +17,32 @@ struct ListView: View {
         NavigationView{
             //отображаем все обекты
             List(dogsManager.dogs, id: \.id) { dog in
-                Text(dog.breed)
                 
-                    .swipeActions {
+                Text(dog.breed)
+                    .swipeActions(edge: .trailing, allowsFullSwipe: false ) {
+                        
                         Button(action: {
-                            dogsManager.remove(dogBread: dog.breed)
+                            dogsManager.remove(id: dog.id)
                         }, label: {
                             Image(systemName: "trash")
-                                
-                            
-                        })
-                        .tint(.red)
+                        }).tint(.red)
+                        
                                
+                        Button(action: {
+                            //dogsManager.remove(dogBread: dog.breed)
+                            dogsManager.updateDog(id: dog.id, newdogBread: "lol")
+                        }, label: {
+                            Image(systemName: "pencil")
+                        }).tint(.blue)
+                        
                             }
+                    
+                    .padding()
             }
             .navigationTitle("Dogs")
+            
+            //кнопки сверху
+            
             //кнопка сверху +
             .navigationBarItems(trailing:
                                     Button(action: {
@@ -41,6 +52,7 @@ struct ListView: View {
             }, label: {
                 Image(systemName: "plus")
             }))
+            
             //кнопка сверху reload(update)
             .navigationBarItems(trailing:
                                     Button(action: {
@@ -55,6 +67,10 @@ struct ListView: View {
             .sheet(isPresented: $showPopUp){
                 newDogView()
             }
+            
+            
+            
+            
         }
        
     }
