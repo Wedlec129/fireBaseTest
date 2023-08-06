@@ -14,6 +14,7 @@
 		5B015F6F2A7BE7AD00586846 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5B015F6E2A7BE7AD00586846 /* FirebaseAuth */; };
 		5B015F712A7BE7AD00586846 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5B015F702A7BE7AD00586846 /* FirebaseFirestore */; };
 		5B015F732A7BE80B00586846 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B015F722A7BE80B00586846 /* GoogleService-Info.plist */; };
+		5BC1E6A92A7FD58800DA127F /* updateBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1E6A82A7FD58800DA127F /* updateBreed.swift */; };
 		5BDCD3872A7C42E100903882 /* DogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDCD3862A7C42E100903882 /* DogModel.swift */; };
 		5BDCD3892A7C42F800903882 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDCD3882A7C42F800903882 /* ListView.swift */; };
 		5BDCD38B2A7C431900903882 /* DogsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDCD38A2A7C431900903882 /* DogsManager.swift */; };
@@ -27,6 +28,7 @@
 		5B015F632A7BE70700586846 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B015F662A7BE70700586846 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5B015F722A7BE80B00586846 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5BC1E6A82A7FD58800DA127F /* updateBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateBreed.swift; sourceTree = "<group>"; };
 		5BDCD3862A7C42E100903882 /* DogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogModel.swift; sourceTree = "<group>"; };
 		5BDCD3882A7C42F800903882 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		5BDCD38A2A7C431900903882 /* DogsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsManager.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				5B015F612A7BE70600586846 /* ContentView.swift */,
 				5BDCD3882A7C42F800903882 /* ListView.swift */,
 				5BDCD38C2A7D436B00903882 /* newDogView.swift */,
+				5BC1E6A82A7FD58800DA127F /* updateBreed.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				5BDCD3892A7C42F800903882 /* ListView.swift in Sources */,
 				5BDCD38D2A7D436B00903882 /* newDogView.swift in Sources */,
 				5B015F622A7BE70600586846 /* ContentView.swift in Sources */,
+				5BC1E6A92A7FD58800DA127F /* updateBreed.swift in Sources */,
 				5BDCD38B2A7C431900903882 /* DogsManager.swift in Sources */,
 				5B015F602A7BE70600586846 /* fireBaseTestApp.swift in Sources */,
 			);

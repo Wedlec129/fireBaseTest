@@ -10,7 +10,9 @@ import SwiftUI
 struct ListView: View {
     //обекст который можно передовать из вью в ью
     @EnvironmentObject var dogsManager: DogsManager
-    @State private var showPopUp = false
+    @State private var showPopUpNewDog = false
+    
+    @State private var showPopUpRenameDog = false
     
     var body: some View {
         
@@ -30,7 +32,11 @@ struct ListView: View {
                                
                         Button(action: {
                             //dogsManager.remove(dogBread: dog.breed)
-                            dogsManager.updateDog(id: dog.id, newdogBread: "lol")
+                            
+                            dogsManager.updateDog(id: dog.id, newdogBread: "testingRename")
+                            
+                            //updateBreed(Dogid:dog.id)
+                            
                         }, label: {
                             Image(systemName: "pencil")
                         }).tint(.blue)
@@ -47,7 +53,7 @@ struct ListView: View {
             .navigationBarItems(trailing:
                                     Button(action: {
                 //add
-                showPopUp.toggle()
+                showPopUpNewDog.toggle()
                 
             }, label: {
                 Image(systemName: "plus")
@@ -64,11 +70,11 @@ struct ListView: View {
             
             
             //если тоглер нажат отображаем другой экран
-            .sheet(isPresented: $showPopUp){
+            .sheet(isPresented: $showPopUpNewDog){
                 newDogView()
             }
             
-            
+           
             
             
         }

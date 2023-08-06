@@ -1,15 +1,18 @@
 //
-//  newDogView.swift
+//  updateBreed.swift
 //  fireBaseTest
 //
-//  Created by Борух Соколов on 04.08.2023.
+//  Created by Борух Соколов on 06.08.2023.
 //
-
+//TESTING NO WORKKK
 import SwiftUI
 
-struct newDogView: View {
+struct updateBreed: View {
     @EnvironmentObject var dogsManager: DogsManager
-    @State private var newDog = ""
+    
+    @State private var newdogBread = ""
+    
+    @State public var Dogid:Int = 0
     
     //тогглер по убранию окна вспыл
     @Environment(\.presentationMode) var presentationMode
@@ -18,8 +21,8 @@ struct newDogView: View {
     
     var body: some View {
         VStack{
-            Text("Add new Dog  🐕")
-            TextField("Dog", text: $newDog)
+            Text("Rename  Dog  🐶")
+            TextField("Dog", text: $newdogBread)
                 .padding()
                 .padding(.vertical,100)
             
@@ -28,6 +31,7 @@ struct newDogView: View {
                 Button(action: {
                     //закрываем экран
                     presentationMode.wrappedValue.dismiss()
+                   
                     
                 }, label: {
                     Text("Close")
@@ -37,9 +41,7 @@ struct newDogView: View {
                 
                 
                 Button(action: {
-                    //add
-                    dogsManager.addDog(dogBread: newDog)
-                    
+                    dogsManager.updateDog(id: Dogid, newdogBread: newdogBread)
                     //закрываем экран
                     presentationMode.wrappedValue.dismiss()
                     
@@ -50,7 +52,7 @@ struct newDogView: View {
                 
                 
                 
-               
+                
                 
                 
             }
@@ -58,8 +60,8 @@ struct newDogView: View {
     }
 }
 
-struct newDogView_Previews: PreviewProvider {
+struct updateBreed_Previews: PreviewProvider {
     static var previews: some View {
-        newDogView()
+        updateBreed()
     }
 }
