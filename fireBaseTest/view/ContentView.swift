@@ -14,57 +14,40 @@ struct ContentView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var userIsLogginIn = false
-   
+    
     
     var body: some View {
         if userIsLogginIn {
             ListView()
                 .environmentObject(DogsManager())
-            
         }
         else{
             //если не вошли то показываем окно входа
             welcomeScrean
         }
-        
     }
-    
     
     var welcomeScrean: some View {
         
         ZStack{
-            
-                Color.black
-                RoundedRectangle(cornerRadius: 25,style: .circular)
-                //.foregroundColor(.red)
-                    .foregroundStyle(.linearGradient(colors: [.pink,.red], startPoint: .topLeading, endPoint: .bottomTrailing))
-                    .frame(width: 1010 ,height: 400)
-                    .rotationEffect(.degrees(135))
-                    .offset(y: -370)
-            
-            
+            BackgroundApp()
             VStack(spacing: 20){
-                Text("Welcom to")
-                    .foregroundColor(.white)
-                    .font(.system(size: 55, weight: .bold, design: .rounded))
-                    .offset(x: -70, y: -120)
-                Text("Dog notes")
-                    .foregroundColor(.white)
-                    .font(.system(size: 55, weight: .bold, design: .rounded))
-                    .offset(x: -70, y: -120)
+                TextWelcom()
                 
+                //поле ввода
                 TextField("Email", text: $email)
                     .foregroundColor(.white)
                     .textFieldStyle(.plain)
                     .fontWeight(.bold)
+                //custom color to epty or not
                     .placeholder(when: email.isEmpty){
                         Text("Email")
                             .foregroundColor(.white)
                             .bold()
                     }
-                Rectangle()
-                    .frame(width: 350,height: 1)
-                    .foregroundColor(.white)
+                Border()
+                
+                //поле ввода
                 SecureField("Password", text: $password)
                     .foregroundColor(.white)
                     .textFieldStyle(.plain)
@@ -74,16 +57,16 @@ struct ContentView: View {
                             .foregroundColor(.white)
                             .bold()
                     }
-                Rectangle()
-                    .frame(width: 350,height: 1)
-                    .foregroundColor(.white)
-                
-                
-                
+                Border()
+
+                //кнопка регестрации
                 Button(action: {
                     //sing up
                     register()
-                }, label: {
+                    
+                }
+                       
+                       , label: {
                    
                         Text("Sing up")
                             .foregroundColor(.white)
@@ -93,41 +76,26 @@ struct ContentView: View {
                                 RoundedRectangle(cornerRadius: 10,style: .circular)
                                     .fill(.linearGradient(colors: [.pink,.red], startPoint: .topLeading, endPoint: .bottomTrailing))
                             )
-                           
-                    
-                    
                 })
                 .offset(y:100)
+               
 
+                
                 Button(action: {
                     //login
                     login()
-                    
-                    
-                    
-                    
                 }, label: {
                         Text("Already have a account ? Login")
                         .bold()
                         .foregroundColor(.white)
                         
                 })
+                
                 .offset(y:110)
-                
-                
                 
             }
             .frame(width: 350)
-            /*
-            .onAppear(){
-                Auth.auth().addStateDidChangeListener{autch, user in
-                 if user != nil {
-                     userIsLogginIn.toggle()
-                     print(user?.email ?? "")
-                     print(user?.displayName ?? "")
-                 }
-             }
-            }*/
+            
             
             
         }
@@ -165,10 +133,14 @@ struct ContentView: View {
             (resault, error) in
             if error != nil {
                 print(error?.localizedDescription ?? "")
+               
             } else{
                 print("success зарегестрировали аккант!")
+              
+               
             }
         }
+        
     }
   
 }
@@ -182,8 +154,8 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+//расширение для вью для изменеия от услоия
 extension View{
-    
     func placeholder<Content: View>(when sholdShow:Bool, aligment: Alignment = .leading, @ViewBuilder placeholder: () -> Content ) -> some View{
         
         ZStack(alignment: aligment){
@@ -193,4 +165,44 @@ extension View{
         
     }
     
+}
+
+//задний фон прилодения
+struct BackgroundApp: View {
+    var body: some View {
+        ZStack{
+            Color.black
+            RoundedRectangle(cornerRadius: 25,style: .circular)
+            //.foregroundColor(.red)
+                .foregroundStyle(.linearGradient(colors: [.pink,.red], startPoint: .topLeading, endPoint: .bottomTrailing))
+                .frame(width: 1010 ,height: 400)
+                .rotationEffect(.degrees(135))
+                .offset(y: -370)
+        }
+    }
+}
+
+//текст добро пожалоывть
+struct TextWelcom: View {
+    var body: some View {
+        VStack{
+            Text("Welcom to")
+                .foregroundColor(.white)
+                .font(.system(size: 55, weight: .bold, design: .rounded))
+                .offset(x: -70, y: -120)
+            Text("Dog notes")
+                .foregroundColor(.white)
+                .font(.system(size: 55, weight: .bold, design: .rounded))
+                .offset(x: -70, y: -120)
+        }
+    }
+}
+
+//граница для полей
+struct Border: View {
+    var body: some View {
+        Rectangle()
+            .frame(width: 350,height: 1)
+            .foregroundColor(.white)
+    }
 }

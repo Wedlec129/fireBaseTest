@@ -10,8 +10,11 @@ import SwiftUI
 struct ListView: View {
     //обекст который можно передовать из вью в ью
     @EnvironmentObject var dogsManager: DogsManager
+    
+    //тогглер показывать ли меню добавления дог
     @State private var showPopUpNewDog = false
     
+    //тоглер показ ли меню редактирования дог и храним адрес дог
     @State private var showPopUpRenameDog = false
     @State private var RenameDogId :Int?
     
@@ -36,13 +39,9 @@ struct ListView: View {
                         
                         //кнопка изменить
                         Button(action: {
-                            //dogsManager.remove(dogBread: dog.breed)
-                            //dogsManager.updateDog(id: dog.id, newdogBread: "testingRename")
-                            
-                            //updateBreed(Dogid:dog.id)
-                            
+                            //тогг
                             showPopUpRenameDog.toggle()
-                            RenameDogId = dog.id
+                            RenameDogId = dog.id //айди
                            
                             
                         }, label: {
@@ -60,7 +59,7 @@ struct ListView: View {
             //кнопка сверху +
             .navigationBarItems(trailing:
                                     Button(action: {
-                //add
+                //add тогл
                 showPopUpNewDog.toggle()
                 
             }, label: {
@@ -70,18 +69,19 @@ struct ListView: View {
             //кнопка сверху reload(update)
             .navigationBarItems(trailing:
                                     Button(action: {
-                dogsManager.fetchDogs()
+                dogsManager.fetchDogs() //подгружаем данные
             }, label: {
                 Image(systemName: "arrow.triangle.2.circlepath")
                 
             }))
             
             
-            //если тоглер нажат отображаем другой экран
+            //если тоглер нажат отображаем другой экран нов дог
             .sheet(isPresented: $showPopUpNewDog){
                 newDogView()
             }
             
+            //тог ренейм
             .sheet(isPresented: $showPopUpRenameDog){
                 updateBreed(Dogid: RenameDogId ?? 0) //View
             }

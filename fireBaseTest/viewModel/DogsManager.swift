@@ -12,7 +12,7 @@ import FirebaseFirestoreTarget
 import Foundation
 
 //наша модель данных где мы определяем как будем парсить
-
+//как рабтать какие ф-я будут 
 
 class DogsManager : ObservableObject{
     
@@ -73,7 +73,7 @@ class DogsManager : ObservableObject{
     //удаляем
     func remove(id:Int){
         let db = Firestore.firestore()
-        
+        //удаляем по документам
         db.collection("Dogs").document(String(id)).delete() { err in
             if let err = err {
                 print("Error removing document: \(err)")
@@ -88,7 +88,7 @@ class DogsManager : ObservableObject{
     
     func updateDog(id:Int, newdogBread:String){
         let db = Firestore.firestore()
-        
+        //обновляем по документу а они у на  айди
         db.collection("Dogs").document(String(id)).updateData(["breed": newdogBread]) { error in
             if let error = error {
                 print("Error updating document: \(error)")
@@ -103,3 +103,12 @@ class DogsManager : ObservableObject{
 }
 
 
+
+
+
+
+
+
+
+
+//кусь
