@@ -86,13 +86,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		5BC1E6AA2A7FDA9200DA127F /* funcView */ = {
+			isa = PBXGroup;
+			children = (
+				5BDCD38C2A7D436B00903882 /* newDogView.swift */,
+				5BC1E6A82A7FD58800DA127F /* updateBreed.swift */,
+			);
+			path = funcView;
+			sourceTree = "<group>";
+		};
 		5BDCD38E2A7D437700903882 /* view */ = {
 			isa = PBXGroup;
 			children = (
 				5B015F612A7BE70600586846 /* ContentView.swift */,
 				5BDCD3882A7C42F800903882 /* ListView.swift */,
-				5BDCD38C2A7D436B00903882 /* newDogView.swift */,
-				5BC1E6A82A7FD58800DA127F /* updateBreed.swift */,
+				5BC1E6AA2A7FDA9200DA127F /* funcView */,
 			);
 			path = view;
 			sourceTree = "<group>";

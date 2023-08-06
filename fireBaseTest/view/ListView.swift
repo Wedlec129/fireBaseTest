@@ -13,29 +13,37 @@ struct ListView: View {
     @State private var showPopUpNewDog = false
     
     @State private var showPopUpRenameDog = false
+    @State private var RenameDogId :Int?
     
+   
     var body: some View {
         
         NavigationView{
             //отображаем все обекты
             List(dogsManager.dogs, id: \.id) { dog in
                 
+                //наши обекты
                 Text(dog.breed)
+                    //свайп
                     .swipeActions(edge: .trailing, allowsFullSwipe: false ) {
                         
+                        //кнопка удалить
                         Button(action: {
-                            dogsManager.remove(id: dog.id)
+                            dogsManager.remove(id: dog.id) //ф-я удалить
                         }, label: {
                             Image(systemName: "trash")
                         }).tint(.red)
                         
-                               
+                        //кнопка изменить
                         Button(action: {
                             //dogsManager.remove(dogBread: dog.breed)
-                            
-                            dogsManager.updateDog(id: dog.id, newdogBread: "testingRename")
+                            //dogsManager.updateDog(id: dog.id, newdogBread: "testingRename")
                             
                             //updateBreed(Dogid:dog.id)
+                            
+                            showPopUpRenameDog.toggle()
+                            RenameDogId = dog.id
+                           
                             
                         }, label: {
                             Image(systemName: "pencil")
@@ -74,7 +82,9 @@ struct ListView: View {
                 newDogView()
             }
             
-           
+            .sheet(isPresented: $showPopUpRenameDog){
+                updateBreed(Dogid: RenameDogId ?? 0) //View
+            }
             
             
         }
